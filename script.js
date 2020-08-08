@@ -17,11 +17,8 @@ function changeQuantity(item, addQuantity) {
 }
 
 function grandTotal(removeItem){
-    if(removeItem == 'phone' || removeItem == 'case'){
-        document.getElementById(removeItem).style.display = 'none';
-    }
-    const phonePrice = removeItem == 'phone' ? 0 : document.getElementById('phone-quantity').value * phoneUnitPrice;
-    const casePrice = removeItem == 'case' ? 0 : document.getElementById('case-quantity').value * caseUnitPrice;
+    const phonePrice = document.getElementById('phone-quantity').value * phoneUnitPrice;
+    const casePrice = document.getElementById('case-quantity').value * caseUnitPrice;
 
     let subtotal = phonePrice + casePrice;
     document.getElementById('subtotal').innerText = '$' + subtotal;
